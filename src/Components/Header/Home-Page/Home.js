@@ -1,13 +1,26 @@
-import React from 'react';
-import { fakeData } from '../../Data/FakeData';
+import React, { useEffect, useState } from 'react';
 import ShowProducts from './../../Show-Products/ShowProducts';
+import Admin from './../../Admin/Admin';
 const Home = () => {
+    const[products,setProducts]=useState([])
+    
+    useEffect(()=>{
+        const url='http://localhost:5000/loadAllData'
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setProducts(data))
+    },[])
+    
+    
     return (
-        <div className='container'>
+    <>
+    <Admin/>
+    <div className='container'>
             <div className='row g-4 mt-5'>
-           {fakeData.map(pd=><ShowProducts products={pd}/>)}
+           {products?.map(pd=><ShowProducts products={pd}/>)}
         </div>
         </div>
+        </>
     );
 };
 
