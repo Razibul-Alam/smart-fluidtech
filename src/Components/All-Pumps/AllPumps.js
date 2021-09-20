@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 const AllPumps = () => {
     const[pumpList,setPumpList]=useState([])
   useEffect(()=>{
-    const url=`http://localhost:5000/getPumps`
+    const url=`https://ancient-beach-26659.herokuapp.com/getPumps`
     fetch(url)
     .then(res=>res.json())
     .then(data=>setPumpList(data))
@@ -19,7 +19,8 @@ console.log(pumpList)
     <tr>
       <th>SL</th>
       <th>Model</th>
-      <th>Stock</th>
+      <th>Category</th>
+      <th>Serial</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -28,7 +29,7 @@ console.log(pumpList)
        const{model,serial,category}=pd
        const handleDecrease=async(id)=>{
         console.log(id)
-        const response = await fetch(`http://localhost:5000/delete/${id}`, {
+        const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
           method: "DELETE"
         });
         return response.json();

@@ -7,7 +7,7 @@ const Admin = () => {
     // onsubmit handle
     const onSubmit = data =>{
     console.log(data)
-        fetch('http://localhost:5000/addProduct',{
+        fetch('https://ancient-beach-26659.herokuapp.com/addProduct',{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ const Admin = () => {
     };
     // add product from fake data
     const addProduct=()=>{
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://ancient-beach-26659.herokuapp.com/addProduct', {
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(fakeData)

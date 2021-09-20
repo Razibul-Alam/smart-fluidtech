@@ -6,7 +6,7 @@ const StockList = () => {
   console.log(id)
   const[stocks,setStocks]=useState([])
   useEffect(()=>{
-    const url=`http://localhost:5000/getPump/${id.toLowerCase()}`
+    const url=`https://ancient-beach-26659.herokuapp.com/getPump/${id.toLowerCase()}`
     fetch(url)
     .then(res=>res.json())
     .then(data=>setStocks(data))
@@ -20,8 +20,9 @@ console.log(stocks)
     <tr>
       <th>SL</th>
       <th>Model</th>
-      <th>Serial</th>
       <th>Category</th>
+      <th>Serial</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,7 +30,7 @@ console.log(stocks)
        const{model,category,id,serial}=pd
        const handleDecrease=async(id)=>{
         console.log(id)
-        const response = await fetch(`http://localhost:5000/delete/${id}`, {
+        const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
           method: "DELETE"
         });
         return response.json();
