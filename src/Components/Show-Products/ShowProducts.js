@@ -21,7 +21,7 @@ console.log(id)
       <Card.Text>This is your trusted option. You can use this confidently
       </Card.Text>
       <Link to={`/admin/${id}`}><Button className='btn btn-danger'>Details</Button></Link>
-     <Link to={`/stock/${id}`}><Button className='btn btn-success ms-2'>Stock-Check</Button></Link> 
+     <Link to={`/stock/${model}`}><Button className='btn btn-success ms-2'>Stock-Check</Button></Link> 
      
     </Card.Body>
   </Card>

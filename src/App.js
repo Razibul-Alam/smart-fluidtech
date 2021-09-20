@@ -3,6 +3,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Header/Home-Page/Home';
 import StockList from './Components/Stock-List/StockList';
 import Admin from './Components/Admin/Admin';
+import AllPumps from './Components/All-Pumps/AllPumps';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,8 @@ function App() {
     <Router>
     <Header/>
       <Switch>
+     <Route exact path="/allpumps">
+    <AllPumps/></Route>
      <Route path="/stock/:id">
    <StockList/>
      </Route>

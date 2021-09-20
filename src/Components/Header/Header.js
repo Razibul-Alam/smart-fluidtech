@@ -18,6 +18,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link><Link to='/'>Home</Link></Nav.Link>
             <Nav.Link><Link to='/admin'>Admin</Link></Nav.Link>
+            <Nav.Link><Link to='/allpumps'>All-Pumps</Link></Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Teams</Nav.Link>

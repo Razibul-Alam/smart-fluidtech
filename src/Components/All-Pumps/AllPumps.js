@@ -1,32 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import {React,useEffect,useState} from 'react';
 import { Table } from 'react-bootstrap';
-import { useParams } from 'react-router';
-const StockList = () => {
-  const{id}=useParams()
-  console.log(id)
-  const[stocks,setStocks]=useState([])
+
+const AllPumps = () => {
+    const[pumpList,setPumpList]=useState([])
   useEffect(()=>{
-    const url=`http://localhost:5000/getPump/${id.toLowerCase()}`
+    const url=`http://localhost:5000/getPumps`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>setStocks(data))
+    .then(data=>setPumpList(data))
 },[])
-console.log(stocks) 
+console.log(pumpList) 
     return (
         <div>
-            <h2 className='text-danger text-center my-5'>{stocks?.length} list</h2>
+            <div>
+            <h2 className='text-danger text-center my-5'>Total Pumps {pumpList?.length}</h2>
            <Table striped bordered hover>
   <thead>
     <tr>
       <th>SL</th>
       <th>Model</th>
-      <th>Serial</th>
-      <th>Category</th>
+      <th>Stock</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
-  {stocks?.map((pd,index)=>{
-       const{model,category,id,serial}=pd
+  {pumpList?.map((pd,index)=>{
+       const{model,serial,category}=pd
        const handleDecrease=async(id)=>{
         console.log(id)
         const response = await fetch(`http://localhost:5000/delete/${id}`, {
@@ -40,7 +39,7 @@ console.log(stocks)
         <td>{model}</td>
         <td>{category}</td>
         <td>{serial}</td>
-        <td><button className='btn btn-warning' onClick={()=>{handleDecrease(id)}}>Decrease</button></td>
+        <td><button className='btn btn-warning' onClick={()=>{handleDecrease(serial)}}>Decrease</button></td>
       </tr>
        )
    })}
@@ -48,7 +47,8 @@ console.log(stocks)
   </tbody>
 </Table>
         </div>
+        </div>
     );
 };
 
-export default StockList;
+export default AllPumps;
