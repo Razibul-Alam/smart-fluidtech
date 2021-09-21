@@ -14,7 +14,6 @@ const Home = () => {
     
     return (
     <>
-    <Admin/>
     <div className='container'>
             <div className='row g-4 mt-5'>
            {products?.map(pd=><ShowProducts products={pd}/>)}

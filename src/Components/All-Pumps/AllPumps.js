@@ -21,26 +21,24 @@ console.log(pumpList)
       <th>Model</th>
       <th>Category</th>
       <th>Serial</th>
-      <th>Action</th>
     </tr>
   </thead>
   <tbody>
   {pumpList?.map((pd,index)=>{
        const{model,serial,category}=pd
-       const handleDecrease=async(id)=>{
-        console.log(id)
-        const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
-          method: "DELETE"
-        });
-        return response.json();
-            }
+      //  const handleDecrease=async(id)=>{
+      //   console.log(id)
+      //   const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
+      //     method: "DELETE"
+      //   });
+      //   return response.json();
+      //       }
        return(
         <tr>
         <td>{index+1}</td>
         <td>{model}</td>
         <td>{category}</td>
         <td>{serial}</td>
-        <td><button className='btn btn-warning' onClick={()=>{handleDecrease(serial)}}>Decrease</button></td>
       </tr>
        )
    })}
