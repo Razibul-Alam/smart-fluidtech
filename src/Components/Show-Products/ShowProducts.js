@@ -10,7 +10,7 @@ const ShowProducts = ({products}) => {
 console.log(id)
     }
     return (
-        <div className='col-lg-4 text-center shadow'>
+        <div className='col-lg-4 text-center'>
         
   <Card>
     <Card.Img variant="top" src={img} className='my-photo' />
