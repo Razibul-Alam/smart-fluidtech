@@ -21,7 +21,9 @@ const Delivery = () => {
           <th>Model</th>
           <th>Category</th>
           <th>Serial</th>
-          <th>Action</th>
+          <th>Date</th>
+          <th>Place</th>
+          <th>person</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +34,10 @@ const Delivery = () => {
       <td>{item.model}</td>
       <td>{item.category}</td>
       <td>{item.serial}</td>
+      <td>{item.date}</td>
+      <td>{item.place}</td>
+      <td>{item.person}</td>
+      
     </tr>)}
      
 

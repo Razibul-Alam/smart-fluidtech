@@ -12,13 +12,14 @@ const DeliveryModal = ({show,handleClose,deliveryInfo}) => {
                   </Modal.Header>
                   <Modal.Body>
 
-                 <DeliverySubmit deliveryInfo={deliveryInfo}/>
+                 <DeliverySubmit deliveryInfo={deliveryInfo} handleClose={handleClose}/>
+                 <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
 
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Close
-                    </Button>
+                    
                     {/* <Button variant="primary" onClick={handleClose}>
                       Save Changes
                     </Button> */}
