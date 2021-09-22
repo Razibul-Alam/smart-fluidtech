@@ -41,8 +41,8 @@ const deliveryProduct=(serial)=>{
   
 }
     return (
-      <section className="d-flex justify-content-center">
-      <div className="d-flex justify-content-center">
+      
+     
         <div>
      <div className="text-center my-5">
 {stocks.map(model=><button onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
@@ -50,7 +50,7 @@ const deliveryProduct=(serial)=>{
      </div>
         {showDelivery?<div>
             <h2 className='text-danger text-center my-3'>{stocks?.length} list</h2>
-           <Table striped bordered hover className="mt-2">
+           <Table striped bordered responsive hover className="mt-2">
   <thead>
     <tr>
       <th>SL</th>
@@ -91,9 +91,9 @@ const deliveryProduct=(serial)=>{
          <ModelStockList pumpModel={pumpModel}/>
   
 </div>}
-</div>
+
         </div>
-        </section>
+       
     );
 };
 

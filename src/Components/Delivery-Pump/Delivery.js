@@ -12,10 +12,10 @@ const Delivery = () => {
     },[])
     console.log(deliveryList)
     return (
-      <div className="d-flex justify-content-center">
+      
         <div>
           <h2>{deliveryList.length} Items</h2>
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
       <thead>
         <tr>
           <th>SL</th>
@@ -47,7 +47,7 @@ const Delivery = () => {
 </Table>
   
 </div>
-</div>
+
     );
 };
 
