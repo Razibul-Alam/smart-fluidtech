@@ -5,7 +5,7 @@ const Delivery = () => {
     const[deliveryList,setDeliveryList]=useState([])
     
     useEffect(()=>{
-        const url='http://localhost:5000/allDeliveryList'
+        const url='https://ancient-beach-26659.herokuapp.com/allDeliveryList'
         fetch(url)
         .then(res=>res.json())
         .then(data=>setDeliveryList(data))
