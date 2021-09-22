@@ -6,20 +6,48 @@ const StockList = () => {
   const{id}=useParams()
   // console.log(id)
   const[stocks,setStocks]=useState([])
+  const[pumpModel,setPumpModel]=useState([])
   const[showDelivery,setShowDelivery]=useState(true)
   const[deliveryItem,setdeliveryItem]=useState([])
+
+  // get data from server by category
   useEffect(()=>{
     const url=`https://ancient-beach-26659.herokuapp.com/getPump/${id.toLowerCase()}`
     fetch(url)
     .then(res=>res.json())
     .then(data=>setStocks(data))
 },[])
-// console.log(stocks) 
+// console.log(stocks)
+
+// handler for pump model 
+const getPumpByModel=(model)=>{
+  const url=`http://localhost:5000/loadPump/${model}`
+  fetch(url)
+  .then(res=>res.json())
+  .then(data=>setPumpModel(data))
+  setShowDelivery(false)
+}
+console.log(pumpModel)
+
+// delivery item set function
+const deliveryProduct=(serial)=>{
+  console.log('delivered',serial)
+  const newItem=stocks.find(item=>item.serial==serial)
+  console.log(newItem)
+  // setShowDelivery(false)
+  setdeliveryItem([...deliveryItem,newItem])
+  console.log(deliveryItem)
+  
+}
     return (
       <>
-        <div>
-            <h2 className='text-danger text-center my-5'>{stocks?.length} list</h2>
-           <Table striped bordered hover>
+     <div className="text-center my-5">
+{stocks.map(model=><button onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
+            <button onClick={()=>setShowDelivery(true)}>all</button>
+     </div>
+        {showDelivery?<div>
+            <h2 className='text-danger text-center my-3'>{stocks?.length} list</h2>
+           <Table striped bordered hover className="mt-2">
   <thead>
     <tr>
       <th>SL</th>
@@ -40,16 +68,6 @@ const StockList = () => {
         });
         return response.json();
             }
-// delivery item set function
-            const deliveryProduct=(serial)=>{
-              console.log('delivered',serial)
-              const newItem=stocks.find(item=>item.serial==serial)
-              console.log(newItem)
-              // setShowDelivery(false)
-              setdeliveryItem([...deliveryItem,newItem])
-              console.log(deliveryItem)
-              
-            }
             
        return(
         <tr>
@@ -66,9 +84,8 @@ const StockList = () => {
   </tbody>
 </Table>
 
-        </div>
-        {/* first table done */}
-        <div>
+        </div>:<div>
+          <h2>{pumpModel.length} Items</h2>
       <Table striped bordered hover>
       <thead>
         <tr>
@@ -82,11 +99,12 @@ const StockList = () => {
       <tbody>
 
       
-     {deliveryItem.map((item,index)=><tr>
+     {pumpModel.map((item,index)=><tr>
       <td>{index+1}</td>
       <td>{item.model}</td>
       <td>{item.category}</td>
       <td>{item.serial}</td>
+      <td><button className='btn btn-danger' onClick={()=>{deliveryProduct()}}>Delivery</button></td>
     </tr>)}
      
 
@@ -94,7 +112,7 @@ const StockList = () => {
 </tbody>
 </Table>
   
-</div>
+</div>}
         </>
     );
 };
