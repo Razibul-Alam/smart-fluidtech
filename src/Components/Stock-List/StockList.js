@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import Delivery from './../Delivery-Pump/Delivery';
+import ModelStockList from './../Model-Stocklist/ModelStockList';
 const StockList = () => {
   const{id}=useParams()
   // console.log(id)
@@ -21,7 +22,7 @@ const StockList = () => {
 
 // handler for pump model 
 const getPumpByModel=(model)=>{
-  const url=`http://localhost:5000/loadPump/${model}`
+  const url=`https://ancient-beach-26659.herokuapp.com/loadPump/${model}`
   fetch(url)
   .then(res=>res.json())
   .then(data=>setPumpModel(data))
@@ -85,32 +86,7 @@ const deliveryProduct=(serial)=>{
 </Table>
 
         </div>:<div>
-          <h2>{pumpModel.length} Items</h2>
-      <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>SL</th>
-          <th>Model</th>
-          <th>Category</th>
-          <th>Serial</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      
-     {pumpModel.map((item,index)=><tr>
-      <td>{index+1}</td>
-      <td>{item.model}</td>
-      <td>{item.category}</td>
-      <td>{item.serial}</td>
-      <td><button className='btn btn-danger' onClick={()=>{deliveryProduct()}}>Delivery</button></td>
-    </tr>)}
-     
-
-  
-</tbody>
-</Table>
+         <ModelStockList pumpModel={pumpModel}/>
   
 </div>}
         </>
