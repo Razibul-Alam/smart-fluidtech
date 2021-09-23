@@ -49,7 +49,7 @@ const deliveryProduct=(serial)=>{
             <button onClick={()=>setShowDelivery(true)}>all</button>
      </div>
         {showDelivery?<div>
-            <h2 className='text-danger text-center my-3'>{stocks?.length} list</h2>
+            <h2 className='text-danger text-center my-3'>Item {stocks?.length}</h2>
            <Table striped bordered responsive hover className="mt-2">
   <thead>
     <tr>
