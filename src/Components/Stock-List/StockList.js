@@ -63,14 +63,7 @@ const deliveryProduct=(serial)=>{
   <tbody>
   {stocks?.map((pd,index)=>{
        const{model,category,id,serial,_id}=pd
-      //  console.log(_id)
-       const handleDecrease=async(id)=>{
-        console.log(id)
-        const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
-          method: "DELETE"
-        });
-        return response.json();
-            }
+    
             
        return(
         <tr>
@@ -78,8 +71,8 @@ const deliveryProduct=(serial)=>{
         <td>{model}</td>
         <td>{category}</td>
         <td>{serial}</td>
-        <td><button className='btn btn-warning' onClick={()=>{handleDecrease(_id)}}>Decrease</button></td>
-        <td><button className='btn btn-danger' onClick={()=>{deliveryProduct(serial)}}>Delivery</button></td>
+        {/* <td><button className='btn btn-warning' onClick={()=>{handleDecrease(_id)}}>Decrease</button></td> */}
+        {/* <td><button className='btn btn-danger' onClick={()=>{deliveryProduct(serial)}}>Delivery</button></td> */}
       </tr>
        )
    })}

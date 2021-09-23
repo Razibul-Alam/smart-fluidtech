@@ -14,7 +14,7 @@ console.log(pumpList)
         <div>
             <div>
             <h2 className='text-danger text-center my-5'>Total Pumps {pumpList?.length}</h2>
-           <Table striped bordered hover responsive>
+           <Table striped bordered hover respons>
   <thead>
     <tr>
       <th>SL</th>
@@ -26,13 +26,13 @@ console.log(pumpList)
   <tbody>
   {pumpList?.map((pd,index)=>{
        const{model,serial,category}=pd
-      //  const handleDecrease=async(id)=>{
-      //   console.log(id)
-      //   const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
-      //     method: "DELETE"
-      //   });
-      //   return response.json();
-      //       }
+       const handleDecrease=async(id)=>{
+        console.log(id)
+        const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
+          method: "DELETE"
+        });
+        return response.json();
+            }
        return(
         <tr>
         <td>{index+1}</td>

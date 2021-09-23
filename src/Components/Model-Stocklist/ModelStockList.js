@@ -14,6 +14,13 @@ const ModelStockList = ({pumpModel}) => {
 setDeliveryInfo(info)
 setShow(true)
     }
+    const removeProduct=async(id)=>{
+      console.log(id)
+      const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
+        method: "DELETE"
+      });
+      return response.json();
+          }
     
     return (
       <>
@@ -38,7 +45,8 @@ setShow(true)
       <td>{item.model}</td>
       <td>{item.category}</td>
       <td>{item.serial}</td>
-      <td><button className='btn btn-danger'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
+      <td><button className='btn btn-success'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
+      <td><button className='btn btn-danger'onClick={()=>{removeProduct(item._id)}}>Remove</button></td>
     </tr>)}
      
 
