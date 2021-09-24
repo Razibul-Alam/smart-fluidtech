@@ -18,7 +18,7 @@ const StockList = () => {
     .then(res=>res.json())
     .then(data=>setStocks(data))
 },[])
-// console.log(stocks)
+console.log(stocks)
 
 // handler for pump model 
 const getPumpByModel=(model)=>{

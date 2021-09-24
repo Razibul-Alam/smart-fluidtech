@@ -10,14 +10,23 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { createContext, useState } from 'react';
+import LoginPage from './Components/Login page/LoginPage';
 
+
+export const userContext=createContext();
 function App() {
+  const[loggedInUser,setLoggedInUser]=useState({});
   return (
+    <userContext.Provider value={[loggedInUser,setLoggedInUser]}>
     <Router>
     <Header/>
       <Switch>
      <Route exact path="/allpumps">
     <AllPumps/>
+    </Route>
+     <Route exact path="/login">
+    <LoginPage/>
     </Route>
      <Route exact path="/delivery">
     <Delivery/>
@@ -36,6 +45,7 @@ function App() {
      </Route>
      </Switch>
     </Router>
+    </userContext.Provider>
   );
 }
 

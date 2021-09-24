@@ -1,6 +1,7 @@
 import React from 'react';
 import { fakeData } from '../Data/FakeData';
 import { useForm } from "react-hook-form";
+import Authority from './../Authotity/Authority';
 
 const Admin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -16,29 +17,27 @@ const Admin = () => {
         })
         
     };
-    // add product from fake data
-    const addProduct=()=>{
-        fetch('https://ancient-beach-26659.herokuapp.com/addProduct', {
-            method: 'post',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(fakeData)
-           });
-    }
     
-
     return (
-        <div>
-           <button onClick={addProduct}>Add Product</button>
+        <>
+        <div className="text-center">
+            <h2>Add main home page banner</h2>
+            <Authority/>
+        </div>
+        <div className="mt-4 text-center">
+            <h2>Add product</h2>
            {/* react hook form */}
            <form onSubmit={handleSubmit(onSubmit)}>
       <input placeholder="Model" defaultValue="" {...register("model")} />
-      <input placeholder="Category" defaultValue="" {...register("category", { required: true })} />
+      <input placeholder="category" defaultValue="" {...register("category", { required: true })} />
+      <input placeholder="type" defaultValue="" {...register("type", { required: true })} />
       <input placeholder="Serial" {...register("serial", { required: true })} />
       <input type="submit" />
     </form>
         
   
         </div>
+        </>
     );
 };
 

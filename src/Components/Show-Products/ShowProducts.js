@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import showProductsCss from './Showproduct.css'
 
 const ShowProducts = ({products}) => {
-    const{model,img,category,id}=products;
+    const{model,imageUrl,category,_id}=products;
     const showStock=(id)=>{
 console.log(id)
     }
@@ -13,15 +13,11 @@ console.log(id)
         <div className='col-lg-4 text-center'>
         
   <Card>
-    <Card.Img variant="top" src={img} className='my-photo' />
+    <Card.Img variant="top" src={imageUrl} className='my-photo' />
     <Card.Body>
-      <Card.Title>Model: {model}</Card.Title>
-      <Card.Text>Category: {category}
-      </Card.Text>
-      <Card.Text>This is your trusted option. You can use this confidently
-      </Card.Text>
+      <Card.Title>Model:{category}</Card.Title>
       <Link to={`/admin`}><Button className='btn btn-danger'>Details</Button></Link>
-     <Link to={`/stock/${model}`}><Button className='btn btn-success ms-2'>Stock-Check</Button></Link> 
+     <Link to={`/stock/${category}`}><Button className='btn btn-success ms-2'>Stock-Check</Button></Link> 
      
     </Card.Body>
   </Card>
