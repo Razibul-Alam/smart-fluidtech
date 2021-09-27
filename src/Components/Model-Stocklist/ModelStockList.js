@@ -13,7 +13,6 @@ const ModelStockList = ({pumpModel}) => {
     const deliveryProduct=(info)=>{
 setDeliveryInfo(info)
 setShow(true)
-removeProduct(info._id)
     }
     const removeProduct=async(id)=>{
       console.log(id)
@@ -46,8 +45,8 @@ removeProduct(info._id)
       <td>{item.model}</td>
       <td>{item.category}</td>
       <td>{item.serial}</td>
-      <td><button className='btn btn-success'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
-      {/* <td><button className='btn btn-danger'onClick={()=>{removeProduct(item._id)}}>Remove</button></td> */}
+      <td><button className='btn btn-danger'onClick={()=>{removeProduct(item._id)}}>Remove</button></td><td><button className='btn btn-success'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
+      
     </tr>)}
      
 

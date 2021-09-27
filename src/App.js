@@ -12,11 +12,13 @@ import {
 } from "react-router-dom";
 import { createContext, useState } from 'react';
 import LoginPage from './Components/Login page/LoginPage';
+import PrivateRoute from './Components/Login page/PrivateRoute';
 
 
 export const userContext=createContext();
 function App() {
   const[loggedInUser,setLoggedInUser]=useState({});
+  console.log(loggedInUser)
   return (
     <userContext.Provider value={[loggedInUser,setLoggedInUser]}>
     <Router>
@@ -25,15 +27,15 @@ function App() {
      <Route exact path="/allpumps">
     <AllPumps/>
     </Route>
+     <PrivateRoute path="/stock/:id" >
+     <StockList/>
+    </PrivateRoute>
      <Route exact path="/login">
     <LoginPage/>
     </Route>
      <Route exact path="/delivery">
     <Delivery/>
     </Route>
-     <Route path="/stock/:id">
-   <StockList/>
-     </Route>
     <Route path="/admin">
       <Admin/>
       </Route>

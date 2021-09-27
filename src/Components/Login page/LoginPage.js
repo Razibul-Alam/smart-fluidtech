@@ -1,31 +1,17 @@
-import {React, useState,useContext} from 'react';
+import { React, useState, useContext, useEffect } from 'react';
   import { initializeApp } from 'firebase/app';
-//   import firebase from "firebase/app";
-
-
 import {userContext} from './../../App';
   import {useHistory,useLocation} from 'react-router';
   import { Form,Button } from 'react-bootstrap';
   import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { firebaseConfig } from './FirebaseConfig';
 const app = initializeApp(firebaseConfig);
-
-
-
-
  
-  
 //   let userDetail={isSignid:false,
 //     email:"",name:"",password:"",error:"",success:false}
-   
-    
-    
-  
-  
   
   const LoginPage = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
-    console.log(loggedInUser.success)
     const history = useHistory();
     const location = useLocation();
     let {
@@ -36,7 +22,7 @@ const app = initializeApp(firebaseConfig);
       }
     };
     
-   console.log(loggedInUser)
+   
   
   
     // const handleSignin = () => {
@@ -68,15 +54,17 @@ signInWithPopup(auth, provider)
     // const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    // console.log(user)
     const newUser={
         email:user.email,
         name:user.displayName,
         success:user.emailVerified,
+        img:user.photoURL
  }
  setLoggedInUser(newUser)
-//  history.replace(from);
-    // console.log(newUser)
-    // ...
+localStorage.setItem('userDetails',newUser.name)
+ history.replace(from);
+
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -88,6 +76,8 @@ signInWithPopup(auth, provider)
     // ...
   });
     }
+   
+    
   
      return ( 
     <div style = {
@@ -98,7 +88,7 @@ signInWithPopup(auth, provider)
       }>
   {/* <p> {loggedInUser.error}</p>
         {loggedInUser.success&&<p>{ loggedInUser ?"created":"logged in" } successfully</p>} */}
-        <button onClick = { handleSignin} > {loggedInUser.success?'Sign In with google':'Logout'}</button><br/>
+        <button onClick = { handleSignin} > {loggedInUser?.email?'Logout':'Sign In with google'}</button><br/>
 
   </div>
     );
