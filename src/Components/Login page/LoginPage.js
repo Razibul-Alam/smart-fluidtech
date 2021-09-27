@@ -50,9 +50,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 signInWithPopup(auth, provider)
   .then((result) => {
-    // const credential = GoogleAuthProvider.credentialFromResult(result);
-    // const token = credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
     // console.log(user)
     const newUser={
@@ -80,15 +77,31 @@ localStorage.setItem('userDetails',newUser.name)
     
   
      return ( 
-    <div style = {
+    <div className="mt-5" style = {
         {
           width: "600px",
           margin: "auto"
         }
       }>
-  {/* <p> {loggedInUser.error}</p>
-        {loggedInUser.success&&<p>{ loggedInUser ?"created":"logged in" } successfully</p>} */}
-        <button onClick = { handleSignin} > {loggedInUser?.email?'Logout':'Sign In with google'}</button><br/>
+  
+        <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+  
+    <Form.Control type="email" placeholder="Enter email" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Button variant="primary" 
+   className="form-control">
+    Submit
+  </Button>
+</Form>
+       
+        <Button variant="danger" 
+   className="form-control mt-3" onClick = { handleSignin}>
+    Login With Google signin
+  </Button>
 
   </div>
     );

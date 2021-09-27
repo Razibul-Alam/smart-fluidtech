@@ -31,8 +31,10 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
       <input placeholder="Category" defaultValue={category} {...register("category", { required: true })} />
       <input placeholder="Serial" defaultValue={serial}  {...register("serial", { required: true })} />
       <input placeholder="date" defaultValue={new Date().toLocaleDateString()}  {...register("date", { required: true })} />
+      <input placeholder="Challan"  {...register("challan", { required: true })} />
 
       <input placeholder="Delivery to" {...register("place", { required: true })} />
+      <input placeholder="Delivery person" {...register("person", { required: true })} />
       
       <input type="submit" />
     </form>

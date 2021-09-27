@@ -23,6 +23,7 @@ const Delivery = () => {
           <th>Category</th>
           <th>Serial</th>
           <th>Date</th>
+          <th>Challan</th>
           <th>Place</th>
           <th>person</th>
         </tr>
@@ -36,6 +37,7 @@ const Delivery = () => {
       <td>{item.category}</td>
       <td>{item.serial}</td>
       <td>{item.date}</td>
+      <td>{item.challan}</td>
       <td>{item.place}</td>
       <td>{item.person}</td>
       
