@@ -14,7 +14,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify({data})
+            body:JSON.stringify(data)
         })
         .then(res=>console.log(res))
         handleClose()

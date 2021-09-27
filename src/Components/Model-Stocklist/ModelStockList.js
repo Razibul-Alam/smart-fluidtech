@@ -14,12 +14,14 @@ const ModelStockList = ({pumpModel}) => {
 setDeliveryInfo(info)
 setShow(true)
     }
-    const removeProduct=async(id)=>{
+    const removeProduct=(id)=>{
       console.log(id)
-      const response = await fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
+       fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
         method: "DELETE"
-      });
-      return response.json();
+      })
+      .then(res=>res.json())
+      .then(result=>console.log(result))
+     
           }
     
     return (
