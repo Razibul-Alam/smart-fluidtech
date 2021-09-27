@@ -15,7 +15,7 @@ console.log(imageUrl.length)
       type:data.type,
       imageUrl:imageUrl
     }
-        const url='http://localhost:5000/addBanner'
+        const url='https://ancient-beach-26659.herokuapp.com/addBanner';
       console.log(eventData);
 
       axios.post(url,eventData)
