@@ -15,6 +15,7 @@ const Admin = () => {
             },
             body:JSON.stringify({data})
         })
+        .then(res=>console.log(res))
         
     };
     

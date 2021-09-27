@@ -9,8 +9,6 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     // onsubmit handle
     const onSubmit = data =>{
-    console.log(data)
-    const user=loggedInUser.name
         fetch('https://ancient-beach-26659.herokuapp.com/addDeliveryProduct',{
             method:"POST",
             headers: {
@@ -18,6 +16,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
             },
             body:JSON.stringify({data})
         })
+        .then(res=>console.log(res))
         handleClose()
         
     };
