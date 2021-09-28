@@ -10,15 +10,21 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import LoginPage from './Components/Login page/LoginPage';
 import PrivateRoute from './Components/Login page/PrivateRoute';
 
 
 export const userContext=createContext();
 function App() {
-  const[loggedInUser,setLoggedInUser]=useState({});
-  console.log(loggedInUser)
+  const[loggedInUser,setLoggedInUser]=useState('');
+  useEffect(()=>{
+    const savedData=localStorage.getItem('userDetails');
+    console.log(savedData)
+    setLoggedInUser(savedData)
+    console.log(loggedInUser)
+},[])
+console.log(loggedInUser?.length)
   return (
     <userContext.Provider value={[loggedInUser,setLoggedInUser]}>
     <Router>
@@ -27,9 +33,9 @@ function App() {
      <Route exact path="/allpumps">
     <AllPumps/>
     </Route>
-     <PrivateRoute path="/stock/:id" >
-     <StockList/>
-    </PrivateRoute>
+     <Route path="/stock/:id" >
+   {loggedInUser?<StockList/>:<LoginPage/>}
+    </Route>
      <Route exact path="/login">
     <LoginPage/>
     </Route>

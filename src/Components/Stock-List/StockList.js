@@ -18,7 +18,7 @@ const StockList = () => {
     .then(res=>res.json())
     .then(data=>setStocks(data))
 },[])
-console.log(stocks)
+// console.log(stocks)
 
 // handler for pump model 
 const getPumpByModel=(model)=>{
@@ -32,9 +32,9 @@ console.log(pumpModel)
 
 // delivery item set function
 const deliveryProduct=(serial)=>{
-  console.log('delivered',serial)
+  // console.log('delivered',serial)
   const newItem=stocks.find(item=>item.serial==serial)
-  console.log(newItem)
+  // console.log(newItem)
   // setShowDelivery(false)
   setdeliveryItem([...deliveryItem,newItem])
   console.log(deliveryItem)

@@ -60,7 +60,7 @@ signInWithPopup(auth, provider)
  }
  setLoggedInUser(newUser)
 localStorage.setItem('userDetails',newUser.name)
- history.replace(from);
+ history.replace('/');
 
   }).catch((error) => {
     // Handle Errors here.

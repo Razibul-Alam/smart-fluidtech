@@ -26,14 +26,8 @@ const Header = () => {
           </Nav>
           <Nav>
           <Nav.Link as={Link} to='/login'>
-            {loggedInUser.success?<div><img src={loggedInUser.img} style = {
-        {
-          width: "40px",
-          height: "40px",
-          borderRadius:"50%"
-        }
-      } alt=""/>{loggedInUser.name}</div>:
-            <p>Login</p>}</Nav.Link>
+            {loggedInUser?.length? <p>{loggedInUser}</p>:<p>login</p>}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
         
