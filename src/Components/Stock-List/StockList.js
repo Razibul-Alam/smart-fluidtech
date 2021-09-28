@@ -10,6 +10,7 @@ const StockList = () => {
   const[pumpModel,setPumpModel]=useState([])
   const[showDelivery,setShowDelivery]=useState(true)
   const[deliveryItem,setdeliveryItem]=useState([])
+  const[itemModel,setItemModel]=useState([])
 
   // get data from server by category
   useEffect(()=>{
@@ -40,13 +41,21 @@ const deliveryProduct=(serial)=>{
   console.log(deliveryItem)
   
 }
+const filteredAModel = stocks.reduce((acc, current) => {
+  const x = acc.find(item => item.model === current.model);
+  if (!x) {
+    return acc.concat([current]);
+  } else {
+    return acc;
+  }
+}, []);
+console.log(filteredAModel)
+// console.log(stockModel)
     return (
-      
-     
         <div>
      <div className="text-center my-5">
-{stocks.map(model=><button onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
-            <button onClick={()=>setShowDelivery(true)}>all</button>
+{filteredAModel.map(model=><button onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
+          {stocks.length?<button onClick={()=>setShowDelivery(true)}>all</button>:''}
      </div>
         {showDelivery?<div>
             <h2 className='text-danger text-center my-3'>Item {stocks?.length}</h2>
