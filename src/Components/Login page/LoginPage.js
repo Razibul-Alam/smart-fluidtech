@@ -81,12 +81,8 @@ window.location.reload(false)
     
   
      return ( 
-    <div className="mt-5" style = {
-        {
-          width: "600px",
-          margin: "auto"
-        }
-      }>
+    <div className="mt-5 d-flex justify-content-center">
+      <div className="w-75">
   
         <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -110,7 +106,7 @@ window.location.reload(false)
    className="form-control mt-3" onClick = {handleSignin}>
     Login With Google signin
   </Button>}
-
+</div>
   </div>
     );
   }

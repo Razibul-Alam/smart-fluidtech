@@ -56,13 +56,15 @@ const deliveryProduct=(serial)=>{
       <th>SL</th>
       <th>Model</th>
       <th>Category</th>
+      <th>Origin</th>
+      <th>Manufacture</th>
       <th>Serial</th>
-      <th>Action</th>
+      
     </tr>
   </thead>
   <tbody>
   {stocks?.map((pd,index)=>{
-       const{model,category,id,serial,_id}=pd
+       const{model,category,id,serial,_id,origin,manufacture}=pd
     
             
        return(
@@ -70,6 +72,8 @@ const deliveryProduct=(serial)=>{
         <td>{index+1}</td>
         <td>{model}</td>
         <td>{category}</td>
+        <td>{origin}</td>
+        <td>{manufacture}</td>
         <td>{serial}</td>
         {/* <td><button className='btn btn-warning' onClick={()=>{handleDecrease(_id)}}>Decrease</button></td> */}
         {/* <td><button className='btn btn-danger' onClick={()=>{deliveryProduct(serial)}}>Delivery</button></td> */}
