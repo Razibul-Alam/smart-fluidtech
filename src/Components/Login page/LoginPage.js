@@ -22,7 +22,10 @@ const app = initializeApp(firebaseConfig);
       }
     };
     
-   
+   const handleLogout=()=>{
+     localStorage.removeItem('userDetails');
+     window.location.reload(false)
+   }
   
   
     // const handleSignin = () => {
@@ -61,6 +64,7 @@ signInWithPopup(auth, provider)
  setLoggedInUser(newUser)
 localStorage.setItem('userDetails',newUser.name)
  history.replace('/');
+window.location.reload(false)
 
   }).catch((error) => {
     // Handle Errors here.
@@ -98,10 +102,14 @@ localStorage.setItem('userDetails',newUser.name)
   </Button>
 </Form>
        
-        <Button variant="danger" 
-   className="form-control mt-3" onClick = { handleSignin}>
+        {loggedInUser?<Button variant="danger" 
+   className="form-control mt-3" onClick = {handleLogout}>
+    Logout
+  </Button>:
+        <Button variant="primary" 
+   className="form-control mt-3" onClick = {handleSignin}>
     Login With Google signin
-  </Button>
+  </Button>}
 
   </div>
     );
