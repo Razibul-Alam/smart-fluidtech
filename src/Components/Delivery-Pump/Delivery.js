@@ -14,7 +14,7 @@ const Delivery = () => {
     return (
       
         <div>
-          <h2>{deliveryList.length} Items</h2>
+          <h2 className="text-danger text-center my-3">{deliveryList.length} Items</h2>
       <Table striped bordered hover responsive>
       <thead>
         <tr>

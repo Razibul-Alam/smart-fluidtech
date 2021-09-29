@@ -28,7 +28,7 @@ const Admin = () => {
             <Authority/>
         </div>
         <div className="mt-4 d-flex justify-content-center">
-         <div className="w-50 bg-dark p-4 rounded">
+         <div className=" bg-dark p-4 rounded w-75">
          <h2 className="text-center text-danger">Add product</h2>
            {/* react hook form */}
            <form onSubmit={handleSubmit(onSubmit)}>

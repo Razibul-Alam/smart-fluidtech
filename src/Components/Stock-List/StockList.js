@@ -84,8 +84,6 @@ console.log(filteredAModel)
         <td>{origin}</td>
         <td>{manufacture}</td>
         <td>{serial}</td>
-        {/* <td><button className='btn btn-warning' onClick={()=>{handleDecrease(_id)}}>Decrease</button></td> */}
-        {/* <td><button className='btn btn-danger' onClick={()=>{deliveryProduct(serial)}}>Delivery</button></td> */}
       </tr>
        )
    })}

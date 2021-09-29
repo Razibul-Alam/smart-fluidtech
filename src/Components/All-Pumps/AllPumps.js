@@ -1,5 +1,6 @@
 import {React,useEffect,useState} from 'react';
-import { Table } from 'react-bootstrap';
+import { Table} from 'react-bootstrap';
+import Search from './../Search/Search';
 
 const AllPumps = () => {
     const[pumpList,setPumpList]=useState([])
@@ -12,6 +13,7 @@ const AllPumps = () => {
 console.log(pumpList) 
     return (
         <div>
+          <Search/>
             <div>
             <h2 className='text-danger text-center my-5'>Total Items {pumpList?.length}</h2>
            <Table striped bordered hover responsive>
