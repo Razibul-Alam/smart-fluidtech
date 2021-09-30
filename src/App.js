@@ -13,6 +13,7 @@ import {
 import { createContext, useState, useEffect } from 'react';
 import LoginPage from './Components/Login page/LoginPage';
 import PrivateRoute from './Components/Login page/PrivateRoute';
+import Search from './Components/Search/Search';
 
 
 export const userContext=createContext();
@@ -31,7 +32,7 @@ console.log(loggedInUser?.length)
     <Header/>
       <Switch>
      <Route exact path="/allpumps">
-    <AllPumps/>
+    <Search/>
     </Route>
      <Route path="/stock/:id" >
    {loggedInUser?<StockList/>:<LoginPage/>}
