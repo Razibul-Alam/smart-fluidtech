@@ -2,6 +2,7 @@ import React from 'react';
 import { FormControl, InputGroup,Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import AllPumps from './../All-Pumps/AllPumps';
+import Delivery from './../Delivery-Pump/Delivery';
 
 const Search = () => {
   const[searchText,setSearchText]=useState('')
@@ -30,10 +31,12 @@ const searchButton=()=>{
         searchButton()
       
   },[searchText])
+
     return (
       <>
-        <div className="text-center d-flex justify-content-center mt-5">
-        <InputGroup className="mb-3 w-50 col-md-6 col-sm-12">
+        <div className="text-center d-flex justify-content-center mt-5 row">
+          <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
+          <InputGroup>
   <FormControl
     onBlur={handleInput} placeholder="search item by catagory"
   />
@@ -41,6 +44,8 @@ const searchButton=()=>{
     Search
   </Button>
 </InputGroup>
+          </div>
+        
         </div>
 
         <AllPumps pumpList={pumpList}/>

@@ -1,5 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Tabs,Tab, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import Delivery from './../Delivery-Pump/Delivery';
 import ModelStockList from './../Model-Stocklist/ModelStockList';
@@ -29,18 +30,18 @@ const getPumpByModel=(model)=>{
   .then(data=>setPumpModel(data))
   setShowDelivery(false)
 }
-console.log(pumpModel)
+
 
 // delivery item set function
-const deliveryProduct=(serial)=>{
-  // console.log('delivered',serial)
-  const newItem=stocks.find(item=>item.serial==serial)
-  // console.log(newItem)
-  // setShowDelivery(false)
-  setdeliveryItem([...deliveryItem,newItem])
-  console.log(deliveryItem)
+// const deliveryProduct=(serial)=>{
+//   // console.log('delivered',serial)
+//   const newItem=stocks.find(item=>item.serial==serial)
+//   // console.log(newItem)
+//   // setShowDelivery(false)
+//   setdeliveryItem([...deliveryItem,newItem])
+//   console.log(deliveryItem)
   
-}
+// }
 const filteredAModel = stocks.reduce((acc, current) => {
   const x = acc.find(item => item.model === current.model);
   if (!x) {
@@ -52,10 +53,11 @@ const filteredAModel = stocks.reduce((acc, current) => {
 console.log(filteredAModel)
 // console.log(stockModel)
     return (
+     
         <div>
      <div className="text-center my-5">
-{filteredAModel.map(model=><button onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
-          {stocks.length?<button onClick={()=>setShowDelivery(true)}>all</button>:''}
+{filteredAModel.map(model=><button className="btn btn-primary me-2" onClick={()=>{getPumpByModel(model.model)}}>{model.model}</button>)}
+          {stocks.length?<button className="btn btn-warning" onClick={()=>setShowDelivery(true)}>all</button>:''}
      </div>
         {showDelivery?<div>
             <h2 className='text-danger text-center my-3'>Item {stocks?.length}</h2>
@@ -92,10 +94,10 @@ console.log(filteredAModel)
 </Table>
 
         </div>:<div>
+
          <ModelStockList pumpModel={pumpModel}/>
   
 </div>}
-
         </div>
        
     );

@@ -12,6 +12,7 @@ const ModelStockList = ({pumpModel}) => {
 
     const deliveryProduct=(info)=>{
 setDeliveryInfo(info)
+removeProduct(info._id)
 setShow(true)
     }
     const removeProduct=(id)=>{
@@ -47,7 +48,7 @@ setShow(true)
       <td>{item.model}</td>
       <td>{item.category}</td>
       <td>{item.serial}</td>
-      <td><button className='btn btn-danger'onClick={()=>{removeProduct(item._id)}}>Remove</button></td><td><button className='btn btn-success'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
+      <td><button className='btn btn-success'onClick={()=>{deliveryProduct(item)}}>Delivery</button></td>
       
     </tr>)}
      

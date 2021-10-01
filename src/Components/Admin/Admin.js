@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { fakeData } from '../Data/FakeData';
 import { useForm } from "react-hook-form";
 import Authority from './../Authotity/Authority';
 import { userContext } from './../../App';
@@ -27,8 +26,8 @@ const Admin = () => {
             <h2>Add main home page banner</h2>
             <Authority/>
         </div>
-        <div className="mt-4 d-flex justify-content-center">
-         <div className=" bg-dark p-4 rounded w-75">
+        <div className="mt-4 d-flex justify-content-center row">
+         <div className=" bg-dark p-4 rounded col-lg-6 col-sm-10">
          <h2 className="text-center text-danger">Add product</h2>
            {/* react hook form */}
            <form onSubmit={handleSubmit(onSubmit)}>

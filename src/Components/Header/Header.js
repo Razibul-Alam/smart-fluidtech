@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { userContext } from './../../App';
+import AdminPage from './../Admin-Offcanvas/AdminPage';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,8 +11,12 @@ import {
   } from "react-router-dom";
 const Header = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
-  console.log(loggedInUser)
+  const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
+      <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         
         <Navbar.Brand href="#home">Smart-Fluidtech</Navbar.Brand>
@@ -20,7 +25,7 @@ const Header = () => {
       <Nav className="ms-auto fw-bolder mt-2">
            <Nav.Link as={Link}  to='/' className="me-3">Home</Nav.Link>
            <Nav.Link as={Link}  to='/admin' className="me-3">Admin</Nav.Link>
-           <Nav.Link as={Link}  to='/allpumps' className="me-3">All-Items</Nav.Link>
+           <Nav.Link as={Link}  to='/allitems' className="me-3">All-Items</Nav.Link>
            <Nav.Link as={Link}  to='/delivery' className="me-3">Recent-Delivery</Nav.Link>
            <Nav.Link as={Link} to='/login' className="me-4">
             {loggedInUser?.length? <p>{loggedInUser}</p>:<p>login</p>}
@@ -33,6 +38,8 @@ const Header = () => {
         </Navbar.Collapse>
         
       </Navbar>
+      <AdminPage show={show} handleClose={handleClose}/>
+      </>
     );
 };
 

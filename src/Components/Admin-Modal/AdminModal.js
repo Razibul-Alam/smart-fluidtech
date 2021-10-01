@@ -1,25 +1,22 @@
 import React from 'react';
+import Admin from '../Admin/Admin';
 import { Modal } from 'react-bootstrap';
-import DeliverySubmit from './DeliverySubmit/DeliverySubmit';
 
-const DeliveryModal = ({show,handleClose,deliveryInfo}) => {
+const AdminModal = ({modalShow,handleModalClose}) => {
     return (
-              <>
-                <Modal show={show} onHide={handleClose}>
+        <>
+                <Modal show={modalShow} onHide={handleModalClose}>
                   <Modal.Header closeButton>
                     <Modal.Title>Delivery Item Information</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
-
-                 <DeliverySubmit deliveryInfo={deliveryInfo} handleClose={handleClose}/>
+                  <Admin/>
                   </Modal.Body>
                   <Modal.Footer>
                   </Modal.Footer>
                 </Modal>
               </>
-           
-       
     );
 };
 
-export default DeliveryModal;
+export default AdminModal;

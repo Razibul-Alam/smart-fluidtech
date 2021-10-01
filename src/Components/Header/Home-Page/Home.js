@@ -1,6 +1,7 @@
 import React, { useEffect, useState,useContext } from 'react';
 import ShowProducts from './../../Show-Products/ShowProducts';
 import { userContext } from './../../../App';
+import ToastMessage from './../../Toast-message/ToastMessage';
 const Home = () => {
     const[products,setProducts]=useState([])
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -17,6 +18,9 @@ const Home = () => {
     
     return (
     <>
+    <div className="d-flex justify-content-center mt-4">
+    {loggedInUser&&<ToastMessage/>}
+    </div>
     <div className='container'>
             <div className='row g-4 mt-5'>
            {products?.map((pd,index)=><ShowProducts products={pd} key={index}/>)}

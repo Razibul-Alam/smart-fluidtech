@@ -8,17 +8,19 @@ import Delivery from './Components/Delivery-Pump/Delivery';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route,useParams
 } from "react-router-dom";
 import { createContext, useState, useEffect } from 'react';
 import LoginPage from './Components/Login page/LoginPage';
 import PrivateRoute from './Components/Login page/PrivateRoute';
 import Search from './Components/Search/Search';
+import AdminPage from './Components/Admin-Offcanvas/AdminPage';
 
 
 export const userContext=createContext();
 function App() {
   const[loggedInUser,setLoggedInUser]=useState('');
+  
   useEffect(()=>{
     const savedData=localStorage.getItem('userDetails');
     console.log(savedData)
@@ -31,7 +33,7 @@ console.log(loggedInUser?.length)
     <Router>
     <Header/>
       <Switch>
-     <Route exact path="/allpumps">
+     <Route exact path="/allitems">
     <Search/>
     </Route>
      <Route path="/stock/:id" >

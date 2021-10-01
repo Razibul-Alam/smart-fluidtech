@@ -11,6 +11,7 @@ const app = initializeApp(firebaseConfig);
 //     email:"",name:"",password:"",error:"",success:false}
   
   const LoginPage = () => {
+   
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const history = useHistory();
     const location = useLocation();
@@ -61,10 +62,11 @@ signInWithPopup(auth, provider)
         success:user.emailVerified,
         img:user.photoURL
  }
- setLoggedInUser(newUser)
+//  setLoggedInUser(newUser)
 localStorage.setItem('userDetails',newUser.name)
  history.replace('/');
 window.location.reload(false)
+
 
   }).catch((error) => {
     // Handle Errors here.
@@ -81,6 +83,7 @@ window.location.reload(false)
     
   
      return ( 
+       <>
     <div className="mt-5 d-flex justify-content-center">
       <div className="w-75">
   
@@ -108,6 +111,7 @@ window.location.reload(false)
   </Button>}
 </div>
   </div>
+  </>
     );
   }
   
