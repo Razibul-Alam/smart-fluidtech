@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Authority from './../Authotity/Authority';
 import { userContext } from './../../App';
 
-const Admin = () => {
+const Admin = ({modalClose}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     // onsubmit handle
@@ -17,7 +17,7 @@ const Admin = () => {
             body:JSON.stringify({data})
         })
         .then(res=>console.log(res))
-        // window.location.reload(false)
+        modalClose()
     };
     
     return (
@@ -27,7 +27,7 @@ const Admin = () => {
             <Authority/>
         </div>
         <div className="mt-4 d-flex justify-content-center row">
-         <div className=" bg-dark p-4 rounded col-lg-6 col-sm-10">
+         <div className="p-4 rounded col-lg-8 col-sm-10">
          <h2 className="text-center text-danger">Add product</h2>
            {/* react hook form */}
            <form onSubmit={handleSubmit(onSubmit)}>

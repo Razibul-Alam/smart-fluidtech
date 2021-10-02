@@ -4,7 +4,6 @@ import { Table} from 'react-bootstrap';
 const AllPumps = ({pumpList}) => {
     return (
         <div>
-       {/* <Search pumpList={pumpList} setPumpList={setPumpList}/> */}
             <div>
             <h2 className='text-danger text-center my-5'>Total Items {pumpList?.length}</h2>
            <Table striped bordered hover responsive>

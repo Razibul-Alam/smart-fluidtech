@@ -5,6 +5,9 @@ import {userContext} from './../../App';
   import { Form,Button } from 'react-bootstrap';
   import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { firebaseConfig } from './FirebaseConfig';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 const app = initializeApp(firebaseConfig);
  
 //   let userDetail={isSignid:false,
@@ -79,13 +82,18 @@ window.location.reload(false)
     // ...
   });
     }
-   
-    
-  
-     return ( 
+    return ( 
        <>
-    <div className="mt-5 d-flex justify-content-center">
-      <div className="w-75">
+       <div className="mt-5 d-flex justify-content-center row">
+         <div className="col-lg-6 col-md-6 col-sm-10">
+       {loggedInUser?<div className="bg-primary p-5 text-light rounded">
+         <h2 className="text-center"><FontAwesomeIcon icon={faUserCircle}/></h2>
+          <h3 className="text-center">{loggedInUser}</h3>
+          <Button variant="danger" 
+   className="form-control mt-3" onClick = {handleLogout}>
+    Logout
+  </Button></div>
+    :<div className="w-75">
   
         <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -100,15 +108,11 @@ window.location.reload(false)
     Submit
   </Button>
 </Form>
-       
-        {loggedInUser?<Button variant="danger" 
-   className="form-control mt-3" onClick = {handleLogout}>
-    Logout
-  </Button>:
         <Button variant="primary" 
    className="form-control mt-3" onClick = {handleSignin}>
-    Login With Google signin
-  </Button>}
+    <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google signin
+  </Button>
+</div>}
 </div>
   </div>
   </>

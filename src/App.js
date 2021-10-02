@@ -2,8 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Header/Home-Page/Home';
 import StockList from './Components/Stock-List/StockList';
-import Admin from './Components/Admin/Admin';
-import AllPumps from './Components/All-Pumps/AllPumps';
 import Delivery from './Components/Delivery-Pump/Delivery';
 import {
   BrowserRouter as Router,
@@ -15,6 +13,7 @@ import LoginPage from './Components/Login page/LoginPage';
 import PrivateRoute from './Components/Login page/PrivateRoute';
 import Search from './Components/Search/Search';
 import AdminPage from './Components/Admin-Offcanvas/AdminPage';
+import AdminAddProduct from './Components/Addmin-Addproduct/AdminAddProduct';
 
 
 export const userContext=createContext();
@@ -46,7 +45,7 @@ console.log(loggedInUser?.length)
     <Delivery/>
     </Route>
     <Route path="/admin">
-      <Admin/>
+      <AdminAddProduct/>
       </Route>
      <Route exact path="/home">
     <Home/>
