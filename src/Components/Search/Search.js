@@ -36,9 +36,10 @@ const searchButton=()=>{
       <>
         <div className="text-center d-flex justify-content-center mt-5 row">
           <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
+          <p className="text-center text-lead mb-2">(serch by pump,sensor,controller,flowmeter etc...)</p>
           <InputGroup>
   <FormControl
-    onBlur={handleInput} placeholder="search item by catagory"
+    onBlur={handleInput} placeholder="search item by type"
   />
   <Button variant="danger" id="button-addon2" onClick={searchButton}>
     Search

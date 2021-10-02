@@ -23,8 +23,7 @@ const Admin = ({modalClose}) => {
     return (
         <>
         <div className="text-center">
-            <h2>Add main home page banner</h2>
-            <Authority/>
+            {/* <Authority/> */}
         </div>
         <div className="mt-4 d-flex justify-content-center row">
          <div className="p-4 rounded col-lg-8 col-sm-10">

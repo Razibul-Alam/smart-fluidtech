@@ -85,7 +85,7 @@ window.location.reload(false)
     return ( 
        <>
        <div className="mt-5 d-flex justify-content-center row">
-         <div className="col-lg-6 col-md-6 col-sm-10">
+         <div className="col-lg-6 col-md-6 col-sm-8 mx-2" >
        {loggedInUser?<div className="bg-primary p-5 text-light rounded">
          <h2 className="text-center"><FontAwesomeIcon icon={faUserCircle}/></h2>
           <h3 className="text-center">{loggedInUser}</h3>
@@ -93,7 +93,7 @@ window.location.reload(false)
    className="form-control mt-3" onClick = {handleLogout}>
     Logout
   </Button></div>
-    :<div className="w-75">
+    :<div className="">
   
         <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -108,8 +108,9 @@ window.location.reload(false)
     Submit
   </Button>
 </Form>
+<h4 className=" text-center my-1 text-danger">Or</h4>
         <Button variant="primary" 
-   className="form-control mt-3" onClick = {handleSignin}>
+   className="form-control" onClick = {handleSignin}>
     <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google signin
   </Button>
 </div>}

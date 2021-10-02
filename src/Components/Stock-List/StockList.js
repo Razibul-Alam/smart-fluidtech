@@ -30,18 +30,6 @@ const getPumpByModel=(model)=>{
   .then(data=>setPumpModel(data))
   setShowDelivery(false)
 }
-
-
-// delivery item set function
-// const deliveryProduct=(serial)=>{
-//   // console.log('delivered',serial)
-//   const newItem=stocks.find(item=>item.serial==serial)
-//   // console.log(newItem)
-//   // setShowDelivery(false)
-//   setdeliveryItem([...deliveryItem,newItem])
-//   console.log(deliveryItem)
-  
-// }
 const filteredAModel = stocks.reduce((acc, current) => {
   const x = acc.find(item => item.model === current.model);
   if (!x) {
@@ -60,7 +48,7 @@ console.log(filteredAModel)
           {stocks.length?<button className="btn btn-warning" onClick={()=>setShowDelivery(true)}>all</button>:''}
      </div>
         {showDelivery?<div>
-            <h2 className='text-danger text-center my-3'>Item {stocks?.length}</h2>
+            <h2 className='text-danger text-center my-3'>{stocks?.length} Items</h2>
            <Table striped bordered responsive hover className="mt-2">
   <thead>
     <tr>

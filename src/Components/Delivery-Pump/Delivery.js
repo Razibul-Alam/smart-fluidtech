@@ -4,14 +4,6 @@ import { FormControl, InputGroup, Table, Button } from 'react-bootstrap';
 const Delivery = () => {
     const[deliveryList,setDeliveryList]=useState([])
     const[searchText,setSearchText]=useState('')
-    
-    // useEffect(()=>{
-    //     const url='https://ancient-beach-26659.herokuapp.com/allDeliveryList'
-    //     fetch(url)
-    //     .then(res=>res.json())
-    //     .then(data=>setDeliveryList(data))
-    // },[])
-  // search button controll
    // input handle
    const handleInput=(e)=>{
     setSearchText(e.target.value)
@@ -43,7 +35,7 @@ const searchButton=()=>{
        
         <InputGroup className="mb-3 w-75">
   <FormControl
-    onBlur={handleInput} placeholder="search item by catagory"/>
+    onBlur={handleInput} placeholder="search by Category"/>
   <Button variant="danger" id="button-addon2" onClick={searchButton}>
     Search
   </Button>

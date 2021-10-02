@@ -11,9 +11,6 @@ const AdminModal = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Admin modalClose={props.onHide}/>

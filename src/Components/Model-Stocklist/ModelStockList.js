@@ -12,24 +12,16 @@ const ModelStockList = ({pumpModel}) => {
 
     const deliveryProduct=(info)=>{
 setDeliveryInfo(info)
-removeProduct(info._id)
+// removeProduct(info._id)
 setShow(true)
     }
-    const removeProduct=(id)=>{
-      console.log(id)
-       fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
-        method: "DELETE"
-      })
-      .then(res=>res.json())
-      .then(result=>console.log(result))
-     
-          }
+   
     
     return (
       <>
         <div>
           <DeliveryModal/>
-          <h2>{pumpModel.length} Items</h2>
+          <h2 className="text-center text-danger">{pumpModel.length} Items</h2>
       <Table striped bordered hover responsive>
       <thead>
         <tr>

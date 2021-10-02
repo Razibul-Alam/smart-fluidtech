@@ -55,7 +55,7 @@ console.log(imageUrl.length)
       <input placeholder="type" type="example" {...register("type",{ required: true })} />
       {/* {errors.exampleRequired && <span>This field is required</span>} */}
       
-    {showButton&&<input type="submit" />}
+    <input type="submit" />
     </form>
   );
 }

@@ -11,9 +11,19 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const{show,setShow}=useState(false)
     console.log(deliveryInfo)
-    const {serial,model,category}=deliveryInfo;
+    const {serial,model,category,_id}=deliveryInfo;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const history = useHistory();
+
+    const removeProduct=(id)=>{
+        console.log(id)
+         fetch(`https://ancient-beach-26659.herokuapp.com/delete/${id}`, {
+          method: "DELETE"
+        })
+        .then(res=>res.json())
+        .then(result=>console.log(result))
+       
+            }
     // onsubmit handle
     const onSubmit = data =>{
         const itemData={
@@ -34,6 +44,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
             body:JSON.stringify(itemData)
         })
         .then(res=>console.log(res))
+        removeProduct(_id)
         history.replace('/')
         handleClose()   
     };
@@ -49,7 +60,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
            <form onSubmit={handleSubmit(onSubmit)}>
       <input className="form-control mt-3" placeholder="Challan"  {...register("challan", { required: true })} /> 
       <input className="form-control mt-3" placeholder="Delivery to" {...register("place", { required: true })} />
-     <Button variant="primary" type="submit">Submit</Button>
+     <Button variant="primary" className="form-control" type="submit">Submit</Button>
     </form>
         </div>}
         </>
