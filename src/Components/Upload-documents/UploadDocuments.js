@@ -13,7 +13,7 @@ const onSubmit = data =>{
       name:data.name,
        imageUrl:imageUrl
     }
-        const url=('http://localhost:5000/addDocument');
+        const url=('https://ancient-beach-26659.herokuapp.com/addDocument');
       console.log(eventData);
 
       axios.post(url,eventData)
