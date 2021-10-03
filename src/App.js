@@ -6,14 +6,13 @@ import Delivery from './Components/Delivery-Pump/Delivery';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,useParams
+  Route
 } from "react-router-dom";
 import { createContext, useState, useEffect } from 'react';
 import LoginPage from './Components/Login page/LoginPage';
-import PrivateRoute from './Components/Login page/PrivateRoute';
 import Search from './Components/Search/Search';
-import AdminPage from './Components/Admin-Offcanvas/AdminPage';
 import AdminAddProduct from './Components/Addmin-Addproduct/AdminAddProduct';
+import SingleProduct from './Components/Single-product/SingleProduct';
 
 
 export const userContext=createContext();
@@ -37,6 +36,9 @@ console.log(loggedInUser?.length)
     </Route>
      <Route path="/stock/:id" >
    {loggedInUser?<StockList/>:<LoginPage/>}
+    </Route>
+     <Route path="/product/:id" >
+   <SingleProduct/>
     </Route>
      <Route exact path="/login">
     <LoginPage/>

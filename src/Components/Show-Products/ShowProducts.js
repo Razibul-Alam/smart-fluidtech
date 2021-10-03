@@ -16,7 +16,7 @@ console.log(id)
     <Card.Img variant="top" src={imageUrl} className='my-photo' />
     <Card.Body>
       <Card.Title>{category}</Card.Title>
-      <Link to={`/admin`}><Button className='btn btn-danger px-3 mt-3'>Details</Button></Link>
+      <Link to={`/product/${category}`}><Button className='btn btn-danger px-3 mt-3'>Details</Button></Link>
      <Link to={`/stock/${category}`}><Button className='btn btn-success ms-3 mt-3'>Stock-Check</Button></Link> 
      
     </Card.Body>
