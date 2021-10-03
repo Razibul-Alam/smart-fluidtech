@@ -14,6 +14,7 @@ import Search from './Components/Search/Search';
 import AdminAddProduct from './Components/Addmin-Addproduct/AdminAddProduct';
 import SingleProduct from './Components/Single-product/SingleProduct';
 import CommingSoon from './Components/Comming/CommingSoon';
+import UploadDocuments from './Components/Upload-documents/UploadDocuments';
 
 
 export const userContext=createContext();
@@ -34,6 +35,9 @@ console.log(loggedInUser?.length)
       <Switch>
      <Route exact path="/allitems">
     <Search/>
+    </Route>
+     <Route exact path="/uploaddoc">
+    <UploadDocuments/>
     </Route>
      <Route path="/stock/:id" >
    {loggedInUser?<StockList/>:<LoginPage/>}

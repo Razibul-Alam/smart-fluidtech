@@ -1,5 +1,6 @@
 import React,{useState,useContext} from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import './Header.css'
 import { userContext } from './../../App';
 import AdminPage from './../Admin-Offcanvas/AdminPage';
 import {
@@ -17,9 +18,9 @@ const Header = () => {
     const handleShow = () => setShow(true);
     return (
       <>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         
-        <Navbar.Brand href="#home">Smart-Fluidtech</Navbar.Brand>
+        <Navbar.Brand href="#home"><img src="https://smartfluidtech.com/wp-content/uploads/2019/08/logo.png" alt="" className="my-logo"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="ms-auto fw-bolder mt-2">
