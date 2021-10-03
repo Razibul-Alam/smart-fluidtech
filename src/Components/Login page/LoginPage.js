@@ -111,7 +111,7 @@ window.location.reload(false)
 <h4 className=" text-center my-1 text-danger">Or</h4>
         <Button variant="primary" 
    className="form-control" onClick = {handleSignin}>
-    <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google signin
+    <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google
   </Button>
 </div>}
 </div>

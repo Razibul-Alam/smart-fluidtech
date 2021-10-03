@@ -15,7 +15,7 @@ const Search = () => {
 const searchButton=()=>{
   let url
   if (searchText) {
-     url=`https://ancient-beach-26659.herokuapp.com/getItems/${searchText}`
+     url=`https://ancient-beach-26659.herokuapp.com/getItems/${searchText.toLocaleLowerCase()}`
   }else{
     url=`https://ancient-beach-26659.herokuapp.com/getPumps`
   }
@@ -36,7 +36,7 @@ const searchButton=()=>{
       <>
         <div className="text-center d-flex justify-content-center mt-5 row">
           <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
-          <p className="text-center text-lead mb-2">(serch by pump,sensor,controller,flowmeter etc...)</p>
+          <p className="text-center text-lead mb-3">(serch by pump,sensor,controller,flowmeter etc...)</p>
           <InputGroup>
   <FormControl
     onBlur={handleInput} placeholder="search item by type"

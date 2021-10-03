@@ -45,6 +45,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
         })
         .then(res=>console.log(res))
         removeProduct(_id)
+        alert('delivery success')
         history.replace('/')
         handleClose()   
     };
@@ -60,7 +61,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
            <form onSubmit={handleSubmit(onSubmit)}>
       <input className="form-control mt-3" placeholder="Challan"  {...register("challan", { required: true })} /> 
       <input className="form-control mt-3" placeholder="Delivery to" {...register("place", { required: true })} />
-     <Button variant="primary" className="form-control" type="submit">Submit</Button>
+     <Button variant="primary" className="form-control mt-3" type="submit">Submit</Button>
     </form>
         </div>}
         </>

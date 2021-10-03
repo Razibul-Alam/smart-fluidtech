@@ -4,9 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Button, ButtonGroup} from 'react-bootstrap';
 import AdminModal from '../Admin-Modal/AdminModal';
+import { Link} from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 const AdminAddProduct = () => {
     const [modalShow, setModalShow] = useState(false);
+    const history=useHistory()
+    const gotoCommingSoon=()=>{
+    history.push('/comming')
+    }
     return (
         <>
         <section className="d-flex justify-content-center bg-dark">
@@ -14,9 +20,9 @@ const AdminAddProduct = () => {
         <Button className="mt-2 px-2" variant="primary" onClick={() => setModalShow(true)}> <span className="fs-4 me-2"><FontAwesomeIcon icon={faCartPlus}/></span>
 Add Product
 </Button>
-  <Button className="mt-2 px-2"> <span className="fs-4 me-2"><FontAwesomeIcon icon={faUser}/></span>Add Member</Button>
-  <Button className="mt-2 px-2">Team Management</Button>
-  <Button className="my-2 px-2">Reset All</Button>
+  <Button className="mt-2 px-2" onClick={gotoCommingSoon}> <span className="fs-4 me-2"><FontAwesomeIcon icon={faUser}/></span>Add Member</Button>
+  <Button className="my-2 px-2" onClick={gotoCommingSoon}>Team Management</Button>
+  <Button className="my-2 px-2">Settings</Button>
 </ButtonGroup>
   
         </section>

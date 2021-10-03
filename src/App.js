@@ -13,6 +13,7 @@ import LoginPage from './Components/Login page/LoginPage';
 import Search from './Components/Search/Search';
 import AdminAddProduct from './Components/Addmin-Addproduct/AdminAddProduct';
 import SingleProduct from './Components/Single-product/SingleProduct';
+import CommingSoon from './Components/Comming/CommingSoon';
 
 
 export const userContext=createContext();
@@ -45,6 +46,9 @@ console.log(loggedInUser?.length)
     </Route>
      <Route exact path="/delivery">
     <Delivery/>
+    </Route>
+     <Route exact path="/comming">
+    <CommingSoon/>
     </Route>
     <Route path="/admin">
       <AdminAddProduct/>

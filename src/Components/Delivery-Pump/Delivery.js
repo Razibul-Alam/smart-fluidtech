@@ -12,7 +12,7 @@ const Delivery = () => {
 const searchButton=()=>{
   let url
   if (searchText) {
-     url=`https://ancient-beach-26659.herokuapp.com/showPump/${searchText}`
+     url=`https://ancient-beach-26659.herokuapp.com/showPump/${searchText.toLocaleLowerCase()}`
   }else{
     url='https://ancient-beach-26659.herokuapp.com/allDeliveryList'
   }
@@ -35,7 +35,7 @@ const searchButton=()=>{
        
         <InputGroup className="mb-3 w-75">
   <FormControl
-    onBlur={handleInput} placeholder="search by Category"/>
+    onBlur={handleInput} placeholder="search by Challan no"/>
   <Button variant="danger" id="button-addon2" onClick={searchButton}>
     Search
   </Button>
