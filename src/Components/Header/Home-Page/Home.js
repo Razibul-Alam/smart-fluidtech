@@ -18,7 +18,7 @@ const Home = () => {
     
     return (
     <>
-    <div className="d-flex justify-content-center mt-4">
+    <div className="d-flex justify-content-center my-5">
     {loggedInUser&&<ToastMessage/>}
     </div>
     <div className='container'>
