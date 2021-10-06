@@ -93,9 +93,9 @@ window.location.reload(false)
    className="form-control mt-3" onClick = {handleLogout}>
     Logout
   </Button></div>
-    :<div className="">
+    :<div className="border border-2 border-dark p-4">
   
-        <Form>
+        {/* <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
   
     <Form.Control type="email" placeholder="Enter email" />
@@ -107,8 +107,12 @@ window.location.reload(false)
    className="form-control">
     Submit
   </Button>
-</Form>
-<h4 className=" text-center my-1 text-danger">Or</h4>
+</Form> */}
+{/* <h4 className=" text-center my-1 text-danger">Or</h4> */}
+<div className='text-center'>
+<img src="https://smartfluidtech.com/wp-content/uploads/2019/08/logo.png" alt="" />
+<h4 className="my-4 text-danger">Move with us safely</h4>
+</div>
         <Button variant="primary" 
    className="form-control" onClick = {handleSignin}>
     <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google
