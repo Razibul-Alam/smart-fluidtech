@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import AdminAddProduct from '../Addmin-Addproduct/AdminAddProduct';
+import { Button,InputGroup,FormControl } from 'react-bootstrap';
 
 const UploadDocuments = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -42,12 +44,23 @@ const onSubmit = data =>{
 
    
     return (
-        <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
-      <input className="my-3" name="exampleRequired" type="file" onChange={handleImageUpload} />
-      <input placeholder="Name" category="example" {...register("name",{ required: true })} />
-      
-    <input type="submit" />
+    <>
+      <AdminAddProduct/>
+   <div className='row  my-4 mx-2'>
+   <form className="text-center col-lg-6 m-auto" onSubmit={handleSubmit(onSubmit)}>
+      <InputGroup className="mb-3">
+    <FormControl
+      placeholder="Recipient's username"
+      aria-label="Recipient's username"
+      aria-describedby="basic-addon2"
+    type='file' name="exampleRequired"  onChange={handleImageUpload}/>
+  </InputGroup>
+  <input className='form-control mb-3' placeholder="Name" category="example" {...register("name",{ required: true })} />
+  <Button as="input" type="submit" value="Submit" className='form-control' />
+
     </form>
+   </div>
+    </>
     );
 };
 

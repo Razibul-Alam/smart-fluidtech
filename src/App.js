@@ -18,6 +18,7 @@ import UploadDocuments from './Components/Upload-documents/UploadDocuments';
 import PrivateRoute from './Components/Login page/PrivateRoute';
 import DeliverySubmit from './Components/Model-Stocklist/DeliverySubmit/DeliverySubmit';
 import FooterPage from './Components/Footer/FooterPage';
+import NotFound from './Components/Not-Found-page/NotFound';
 
 
 export const userContext=createContext();
@@ -65,6 +66,9 @@ console.log(loggedInUser?.length)
      </Route>
      <Route exact path="/">
     <Home/>
+     </Route>
+     <Route exact path="8">
+    <NotFound/>
      </Route>
      </Switch>
      <FooterPage/>

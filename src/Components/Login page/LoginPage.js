@@ -93,7 +93,7 @@ window.location.reload(false)
    className="form-control mt-3" onClick = {handleLogout}>
     Logout
   </Button></div>
-    :<div className="border border-2 border-dark p-2">
+    :<div className="m-2">
   
         {/* <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -111,7 +111,7 @@ window.location.reload(false)
 {/* <h4 className=" text-center my-1 text-danger">Or</h4> */}
 <div className='text-center'>
 <img className="my-logo" src="https://smartfluidtech.com/wp-content/uploads/2019/08/logo.png" alt="" />
-<h4 className="my-4 text-danger">Move with us safely</h4>
+<h4 className="my-4 text-danger">Please Login</h4>
 </div>
         <Button variant="primary" 
    className="form-control" onClick = {handleSignin}>

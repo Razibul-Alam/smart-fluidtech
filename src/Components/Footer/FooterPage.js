@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook,faYoutubeSquare,faTwitterSquare,faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const FooterPage = () => {
     return (
@@ -13,12 +14,14 @@ const FooterPage = () => {
           <span className="fs-2 mx-2"><FontAwesomeIcon icon={faTwitterSquare} /></span>
           <p>Smart Fluidtech<span className="fs-4"><FontAwesomeIcon icon={faCopyright}/></span> AllRight reserve</p>
         </div>
-        <div className="col-lg-4 mt-2 mb-2">
-          <h5>SmartFluidtech</h5>
-          <p>Email:SmartFluidtech@gmail.com</p>
-          <p>Dhaka, bangladesh</p>
+        <div className="col-lg-4 mb-2">
+          <h5>Our Principles</h5>
+          <hr className='w-50 m-auto'/>
+         <Link to='/'><p>Prominent</p></Link>
+         <Link to='/'><p>Badger</p></Link>
+         <Link to='/'><p>Ingersoll Rand</p></Link> 
         </div>
-        <div className="col-lg-4 mt-2">
+        <div className="col-lg-4">
           <h5>SmartFluidtech</h5>
           <p>Email:SmartFluidtech@gmail.com</p>
           <p>Dhaka, bangladesh</p>

@@ -6,6 +6,7 @@ import { Button, ButtonGroup} from 'react-bootstrap';
 import AdminModal from '../Admin-Modal/AdminModal';
 import { Link} from 'react-router-dom';
 import { useHistory } from 'react-router';
+import UploadDocuments from '../Upload-documents/UploadDocuments';
 
 const AdminAddProduct = () => {
     const [modalShow, setModalShow] = useState(false);
