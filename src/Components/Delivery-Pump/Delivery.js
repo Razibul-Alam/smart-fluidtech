@@ -42,7 +42,7 @@ const searchButton=()=>{
 </InputGroup>
         </div>
           <h2 className="text-danger text-center my-3">{deliveryList.length} Items</h2>
-      <Table striped bordered hover responsive>
+      <Table bordered hover responsive className='text-light'>
       <thead>
         <tr>
           <th>SL</th>

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Table} from 'react-bootstrap';
-
 const AllPumps = ({pumpList}) => {
     return (
         <div>
             <div>
-            <h2 className='text-danger text-center my-5'>Total Items {pumpList?.length}</h2>
-           <Table striped bordered hover responsive>
+            <h2 className='text-light text-center my-5'>Total Items {pumpList?.length}</h2>
+           <Table bordered responsive className='text-light'>
   <thead>
     <tr>
       <th>SL</th>
