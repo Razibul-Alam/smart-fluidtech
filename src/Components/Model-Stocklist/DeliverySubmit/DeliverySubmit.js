@@ -46,7 +46,7 @@ const DeliverySubmit = ({deliveryInfo,handleClose}) => {
         .then(res=>console.log(res))
         removeProduct(_id)
         alert('delivery success')
-        history.replace('/')
+        history.go(0)
         handleClose()   
     };
     // add product from fake data

@@ -6,9 +6,7 @@ import './Showproduct.css'
 
 const ShowProducts = ({products}) => {
     const{model,imageUrl,category,_id}=products;
-//     const showStock=(id)=>{
-// console.log(id)
-//     }
+
     return (
         <div className='col-lg-4 text-center'>
         

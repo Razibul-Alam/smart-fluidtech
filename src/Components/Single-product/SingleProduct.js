@@ -48,26 +48,6 @@ const SingleProduct = () => {
     };
     return (
         <>
-  
-  {/* <div className='d-flex justify-content-center text-center row mt-5 mx-2'>
-        
-        <Card className="rounded col-lg-6 col-sm-10">
-          <Card.Img variant="top" src={singleItem?.imageUrl} className='my-photo' />
-          <Card.Body>
-            <Card.Title>{singleItem?.category}</Card.Title>
-            
-           <div className='d-flex justify-content-around mt-3'>
-           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-  <Tab eventKey="home" title="See more" className="text-center">
-      <DummyText/>
-  </Tab>
-</Tabs>
-<Link to={`/`}><Button className='btn btn-danger btn-sm mt-3'>Home</Button></Link>
-           </div>
-           
-          </Card.Body>
-        </Card>
-              </div> */}
               <div className='d-flex justify-content-center text-center row mt-5 mx-2'>
                 <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -91,6 +71,9 @@ const SingleProduct = () => {
         alt="Paella dish"
       />
       <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {singleItem?.category}
+        </Typography>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the mussels,

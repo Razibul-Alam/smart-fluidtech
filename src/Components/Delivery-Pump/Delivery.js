@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import { FormControl, InputGroup, Table, Button } from 'react-bootstrap';
-
-const Delivery = () => {
+import { useHistory } from 'react-router';
+const Delivery = ({allItemShow}) => {
+  const history=useHistory()
     const[deliveryList,setDeliveryList]=useState([])
     const[searchText,setSearchText]=useState('')
    // input handle
@@ -28,6 +29,18 @@ const searchButton=()=>{
         searchButton()
       
   },[searchText])
+
+  const removeProduct=(id)=>{
+    console.log(id)
+     fetch(`https://ancient-beach-26659.herokuapp.com/remove/${id}`, {
+      method: "DELETE"
+    })
+    .then(res=>res.json())
+    .then(result=>console.log(result))
+    alert('the item removed')
+    history.go(0)
+   
+        }
     return (
       
         <div>
@@ -42,7 +55,7 @@ const searchButton=()=>{
 </InputGroup>
         </div>
           <h2 className="text-danger text-center my-3">{deliveryList.length} Items</h2>
-      <Table bordered hover responsive className='text-light'>
+      <Table bordered hover responsive variant='dark'>
       <thead>
         <tr>
           <th>SL</th>
@@ -53,6 +66,7 @@ const searchButton=()=>{
           <th>Challan</th>
           <th>Place</th>
           <th>person</th>
+          {allItemShow&&<th>Action</th>}
         </tr>
       </thead>
       <tbody>
@@ -67,6 +81,7 @@ const searchButton=()=>{
       <td>{item.challan}</td>
       <td>{item.place}</td>
       <td>{item.person}</td>
+      {allItemShow&&<td><button className='btn btn-danger'onClick={()=>{removeProduct(item._id)}}>Remove</button></td>}
       
     </tr>)}
      

@@ -49,7 +49,7 @@ console.log(filteredAModel)
      </div>
         {showDelivery?<div>
             <h2 className='text-danger text-center my-3'>{stocks?.length} Items</h2>
-           <Table striped bordered responsive hover className="mt-2">
+           <Table striped bordered responsive hover variant="dark" className="mt-2">
   <thead>
     <tr>
       <th>SL</th>

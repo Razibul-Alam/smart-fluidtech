@@ -29,7 +29,7 @@ history.push('/login')
         <div>
           <DeliveryModal/>
           <h2 className="text-center text-danger">{pumpModel.length} Items</h2>
-      <Table striped bordered hover responsive>
+      <Table striped bordered hover responsive variant='dark'>
       <thead>
         <tr>
           <th>SL</th>

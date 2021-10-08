@@ -67,8 +67,8 @@ signInWithPopup(auth, provider)
  }
 //  setLoggedInUser(newUser)
 localStorage.setItem('userDetails',newUser.name)
- history.replace('/');
-window.location.reload(false)
+history.go('/')
+
 
 
   }).catch((error) => {
@@ -86,14 +86,14 @@ window.location.reload(false)
        <>
        <div className="mt-5 d-flex justify-content-center row">
          <div className="col-lg-6 col-md-6 col-sm-8 mx-2" >
-       {loggedInUser?<div className="bg-primary p-5 text-light rounded">
+       {loggedInUser?<div className="bg-primary p-5 text-dark rounded">
          <h2 className="text-center"><FontAwesomeIcon icon={faUserCircle}/></h2>
           <h3 className="text-center">{loggedInUser}</h3>
           <Button variant="danger" 
    className="form-control mt-3" onClick = {handleLogout}>
     Logout
   </Button></div>
-    :<div className="m-2">
+    :<div className="m-2 p-2 bg-light">
   
         {/* <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -114,7 +114,7 @@ window.location.reload(false)
 <h4 className="my-4 text-danger">Please Login</h4>
 </div>
         <Button variant="primary" 
-   className="form-control" onClick = {handleSignin}>
+   className="form-control mb-3" onClick = {handleSignin}>
     <span className="text-danger fs-4 me-2"><FontAwesomeIcon icon={faGoogle} /></span>Login With Google
   </Button>
 </div>}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table} from 'react-bootstrap';
-const AllPumps = ({pumpList}) => {
+const AllPumps = ({pumpList,allItemShow}) => {
     return (
         <div>
             <div>
             <h2 className='text-light text-center my-5'>Total Items {pumpList?.length}</h2>
-           <Table bordered responsive className='text-light'>
+           <Table bordered responsive variant="light">
   <thead>
     <tr>
       <th>SL</th>
@@ -14,11 +14,12 @@ const AllPumps = ({pumpList}) => {
       <th>Origin</th>
       <th>Manufacture</th>
       <th>Serial</th>
+      
     </tr>
   </thead>
   <tbody>
   {pumpList?.map((pd,index)=>{
-       const{model,serial,category,origin,manufacture}=pd
+       const{model,serial,category,origin,manufacture,_id,}=pd
        return(
         <tr>
         <td>{index+1}</td>
@@ -27,6 +28,7 @@ const AllPumps = ({pumpList}) => {
         <td>{origin}</td>
         <td>{manufacture}</td>
         <td>{serial}</td>
+        
       </tr>
        )
    })}
