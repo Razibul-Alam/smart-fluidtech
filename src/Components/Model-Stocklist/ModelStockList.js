@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { useHistory } from 'react-router';
+import { userContext } from '../../App';
 import DeliveryModal from './DeliveryModal';
 
 const ModelStockList = ({pumpModel}) => {
+  const[loggedInUser,setLoggedInUser]=useContext(userContext);
+  const history=useHistory()
   const [deliveryInfo, setDeliveryInfo] = useState({});
   const [show, setShow] = useState(false);
           
@@ -11,9 +15,12 @@ const ModelStockList = ({pumpModel}) => {
     console.log(pumpModel)
 
     const deliveryProduct=(info)=>{
-setDeliveryInfo(info)
-// removeProduct(info._id)
-setShow(true)
+if(loggedInUser){
+  setDeliveryInfo(info)
+  setShow(true)
+}else{
+history.push('/login')
+}
     }
    
     
