@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header/Header';
+import './App.css'
 import Home from './Components/Header/Home-Page/Home';
 import StockList from './Components/Stock-List/StockList';
 import Delivery from './Components/Delivery-Pump/Delivery';
