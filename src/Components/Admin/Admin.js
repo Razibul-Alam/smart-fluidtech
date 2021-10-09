@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { userContext } from './../../App';
 const Admin = ({modalClose}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     // onsubmit handle
     const onSubmit = data =>{
     

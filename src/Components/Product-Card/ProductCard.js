@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Fab } from '@mui/material';
 import { Link } from 'react-router-dom';
+import './ProductCard.css'
 
 export default function MediaCard({products}) {
     const{model,imageUrl,category,_id}=products;
@@ -25,7 +26,7 @@ export default function MediaCard({products}) {
         </Typography>
       </CardContent>
       <CardActions>
-      <Link to={`/product/${category}`}><Fab variant="extended" size="medium" color="dark" aria-label="add">
+      <Link to={`/product/${category}`}><Fab variant="extended" size="medium" color="primary" aria-label="add">
   Details
 </Fab></Link>
         <Link to={`/stock/${category}`}><Fab variant="extended" size="medium" color="primary" aria-label="add">

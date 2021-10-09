@@ -16,8 +16,6 @@ import AdminAddProduct from './Components/Addmin-Addproduct/AdminAddProduct';
 import SingleProduct from './Components/Single-product/SingleProduct';
 import CommingSoon from './Components/Comming/CommingSoon';
 import UploadDocuments from './Components/Upload-documents/UploadDocuments';
-import PrivateRoute from './Components/Login page/PrivateRoute';
-import DeliverySubmit from './Components/Model-Stocklist/DeliverySubmit/DeliverySubmit';
 import FooterPage from './Components/Footer/FooterPage';
 import NotFound from './Components/Not-Found-page/NotFound';
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import AdminAddProduct from '../Addmin-Addproduct/AdminAddProduct';
 import { Button,InputGroup,FormControl } from 'react-bootstrap';
 
 const UploadDocuments = () => {
@@ -45,7 +44,7 @@ const onSubmit = data =>{
    
     return (
     <>
-      <AdminAddProduct/>
+    <h2 className='text-center text-primary mt-4'>Upload Document</h2>
    <div className='row  my-4 mx-2'>
    <form className="text-center col-lg-6 m-auto" onSubmit={handleSubmit(onSubmit)}>
       <InputGroup className="mb-3">

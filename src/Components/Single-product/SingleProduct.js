@@ -62,7 +62,7 @@ const SingleProduct = () => {
           </IconButton>
         }
         title="Smart Fluid tech"
-        subheader="October 05, 2021"
+        subheader={new Date().toLocaleDateString()}
       />
       <CardMedia
         component="img"
@@ -81,9 +81,6 @@ const SingleProduct = () => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
         {/* <ExpandMoreRounded
           expand={expanded}
           onClick={handleExpandClick}

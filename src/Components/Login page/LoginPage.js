@@ -58,7 +58,7 @@ const auth = getAuth();
 signInWithPopup(auth, provider)
   .then((result) => {
     const user = result.user;
-    // console.log(user)
+    console.log(user)
     const newUser={
         email:user.email,
         name:user.displayName,

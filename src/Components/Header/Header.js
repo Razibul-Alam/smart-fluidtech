@@ -12,6 +12,7 @@ import {
   } from "react-router-dom";
 const Header = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  console.log(loggedInUser)
   const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
