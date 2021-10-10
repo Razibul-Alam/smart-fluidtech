@@ -1,13 +1,13 @@
-import { React, useState, useContext, useEffect } from 'react';
+import { React, useContext} from 'react';
   import { initializeApp } from 'firebase/app';
 import {userContext} from './../../App';
   import {useHistory,useLocation} from 'react-router';
-  import { Form,Button } from 'react-bootstrap';
+  import {Button } from 'react-bootstrap';
   import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { firebaseConfig } from '../../Firebase-config/FirebaseConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {faGoogle } from '@fortawesome/free-brands-svg-icons';
 const app = initializeApp(firebaseConfig);
  
 //   let userDetail={isSignid:false,
@@ -30,27 +30,6 @@ const app = initializeApp(firebaseConfig);
      localStorage.removeItem('userDetails');
      window.location.reload(false)
    }
-  
-  
-    // const handleSignin = () => {
-    //   const provider = new firebase.auth.GoogleAuthProvider();
-    //   firebase.auth()
-    //     .signInWithPopup(provider)
-    //     .then((result) => {
-    //       const {
-    //         email,
-    //         displayName
-    //       } = result.user;
-    //       const signedInUser = {
-    //         displayName,
-    //         email
-    //       }
-    //       setLoggedInUser(signedInUser);
-    //       history.replace(from);
-    //       console.log(signedInUser)
-    //     })
-  
-    // }
     // ....sign in finish....//
     const handleSignin=()=>{
     const provider = new GoogleAuthProvider();
@@ -67,10 +46,8 @@ signInWithPopup(auth, provider)
  }
 //  setLoggedInUser(newUser)
 localStorage.setItem('userDetails',newUser.name)
-history.go('/')
-
-
-
+history.push('/')
+window.location.reload(false)
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -94,21 +71,6 @@ history.go('/')
     Logout
   </Button></div>
     :<div className="m-2 p-2 bg-light">
-  
-        {/* <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-  
-    <Form.Control type="email" placeholder="Enter email" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Button variant="primary" 
-   className="form-control">
-    Submit
-  </Button>
-</Form> */}
-{/* <h4 className=" text-center my-1 text-danger">Or</h4> */}
 <div className='text-center'>
 <img className="my-logo" src="https://smartfluidtech.com/wp-content/uploads/2019/08/logo.png" alt="" />
 <h4 className="my-4 text-danger">Please Login</h4>

@@ -1,22 +1,14 @@
-import React,{useState,useContext} from 'react';
-import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import React,{useContext} from 'react';
+import { Nav, Navbar} from 'react-bootstrap';
 import './Header.css'
 import { userContext } from './../../App';
-import AdminPage from './../Admin-Offcanvas/AdminPage';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
-    NavLink
   } from "react-router-dom";
 const Header = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
   console.log(loggedInUser)
-  const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -33,10 +25,6 @@ const Header = () => {
             {loggedInUser?.length? <p>{loggedInUser}</p>:<p>login</p>}
             </Nav.Link>
           </Nav>
-      
-          {/* <Nav>
-          
-          </Nav> */}
         </Navbar.Collapse>
         
       </Navbar>

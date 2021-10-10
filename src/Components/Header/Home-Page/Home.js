@@ -6,9 +6,6 @@ import TextScroller from './../../Text-Animation/TextScroller';
 const Home = () => {
     const[products,setProducts]=useState([])
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
-    
-    
-    
     useEffect(()=>{
         const url='https://ancient-beach-26659.herokuapp.com/loadAllData'
         fetch(url)

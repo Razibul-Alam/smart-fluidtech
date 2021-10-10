@@ -20,16 +20,7 @@ console.log(imageUrl.length)
 
       axios.post(url,eventData)
       .then(res=>console.log(res))
-      
-
-
   }
-    
-    
-
-    
-  
-
   const handleImageUpload=event=>{
     console.log(event.target.files[0])
     const imageData=new FormData()
@@ -43,9 +34,6 @@ console.log(imageUrl.length)
       setShowButton(true)
     })
   }
-
-
-
   return (
     
 

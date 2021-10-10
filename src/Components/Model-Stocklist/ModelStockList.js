@@ -59,9 +59,6 @@ history.push('/login')
 </div>
 
 <DeliveryModal show={show} handleClose={handleClose} deliveryInfo={deliveryInfo}/>
-
-
-
 </>
 
     );

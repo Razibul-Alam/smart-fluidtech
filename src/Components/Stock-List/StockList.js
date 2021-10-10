@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { Tabs,Tab, Table } from 'react-bootstrap';
+import {Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import Delivery from './../Delivery-Pump/Delivery';
 import ModelStockList from './../Model-Stocklist/ModelStockList';
 const StockList = () => {
   const{id}=useParams()
@@ -10,9 +9,6 @@ const StockList = () => {
   const[stocks,setStocks]=useState([])
   const[pumpModel,setPumpModel]=useState([])
   const[showDelivery,setShowDelivery]=useState(true)
-  const[deliveryItem,setdeliveryItem]=useState([])
-  const[itemModel,setItemModel]=useState([])
-
   // get data from server by category
   useEffect(()=>{
     const url=`https://ancient-beach-26659.herokuapp.com/getPump/${id.toLowerCase()}`

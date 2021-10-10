@@ -4,9 +4,6 @@ import { userContext } from './../../../App';
 import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import ToastMessage from './../../Toast-message/ToastMessage';
-
-
-
 const DeliverySubmit = ({deliveryInfo,handleClose}) => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const{show,setShow}=useState(false)

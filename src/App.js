@@ -42,9 +42,6 @@ console.log(loggedInUser?.length)
      <Route exact path="/uploaddoc">
     <UploadDocuments/>
     </Route>
-     {/* <Route path="/stock/:id" >
-   {loggedInUser?<StockList/>:<LoginPage/>}
-    </Route> */}
      <Route path="/product/:id" >
    <SingleProduct/>
     </Route>

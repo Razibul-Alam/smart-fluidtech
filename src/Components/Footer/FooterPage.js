@@ -24,7 +24,7 @@ const FooterPage = () => {
           <span className="fs-2 mx-2"><FontAwesomeIcon icon={faGithubSquare} /></span>
           <span className="fs-2 mx-2"><FontAwesomeIcon icon={faYoutubeSquare} /></span>
           <span className="fs-2 mx-2"><FontAwesomeIcon icon={faTwitterSquare} /></span>
-          <p>Smart Fluidtech<span className="fs-5"><FontAwesomeIcon icon={faCopyright}/></span> AllRight reserve</p>
+          <p>Smart Fluidtech<span className="fs-6"><FontAwesomeIcon icon={faCopyright}/></span> AllRight reserve</p>
         </div>
       </footer>
     );

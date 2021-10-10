@@ -21,12 +21,6 @@ const onSubmit = data =>{
       .then(res=>console.log(res))
       
   }
-    
-    
-
-    
-  
-
   const handleImageUpload=event=>{
     console.log(event.target.files[0])
     const imageData=new FormData()

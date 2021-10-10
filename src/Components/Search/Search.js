@@ -2,8 +2,6 @@ import React from 'react';
 import { FormControl, InputGroup,Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import AllPumps from './../All-Pumps/AllPumps';
-import Delivery from './../Delivery-Pump/Delivery';
-
 const Search = () => {
   const[searchText,setSearchText]=useState('')
   const[pumpList,setPumpList]=useState([])
@@ -35,19 +33,16 @@ const searchButton=()=>{
     return (
       <>
         <div className="text-center d-flex justify-content-center mt-5 row">
-          <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
-          <p className="text-center text-lead mb-3">(serch by pump,sensor,controller,flowmeter etc...)</p>
-          <InputGroup>
+          
+          <InputGroup className='w-75'>
   <FormControl
-    onBlur={handleInput} placeholder="search item by type"
+    onBlur={handleInput} placeholder="sensor,controller,pump,flowmeter"
   />
   <Button variant="danger" id="button-addon2" onClick={searchButton}>
     Search
   </Button>
 </InputGroup>
-          </div>
-        
-        </div>
+      </div>
 
         <AllPumps pumpList={pumpList}/>
         </>
